@@ -1,10 +1,11 @@
-def personalize(draft: str, profile: dict) -> str:
-    signoff = profile.get("preferred_signoff", "Best regards")
-    signature = profile.get("signature", "Your Name")
+def personalize(draft: str, profile: dict, sender_name: str) -> str:
+    signoff = profile.get("preferred_signoff", "Regards")
+    signature_template = profile.get("signature_format", "{sender_name}")
+    signature = signature_template.format(sender_name=sender_name)
 
     out = draft.replace("[SIGNOFF]", signoff).replace("[SIGNATURE]", signature)
 
-    # If placeholders missing, append signature
     if "[SIGNATURE]" not in draft:
         out = out.rstrip() + f"\n\n{signoff},\n{signature}\n"
+
     return out

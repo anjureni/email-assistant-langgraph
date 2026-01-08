@@ -25,15 +25,22 @@ class EmailState(TypedDict):
     final: str
     retries: int
 
-def load_profile(key: str = "default") -> Dict[str, Any]:
+def load_profile(key: str = "formal") -> Dict[str, Any]:
     with open(PROFILE_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
-    return data.get(key, data["default"])
+
+    # fallback order: requested key -> "formal" -> first profile in file
+    if key in data:
+        return data[key]
+    if "formal" in data:
+        return data["formal"]
+    return next(iter(data.values()))
+
 
 def save_draft(key: str, final_email: str) -> None:
     with open(PROFILE_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
-    prof = data.get(key, data["default"])
+    prof = data.get(key) or data.get("formal") or next(iter(data.values()))
     drafts = prof.get("last_drafts", [])
     drafts.append(final_email)
     prof["last_drafts"] = drafts[-5:]
@@ -47,7 +54,9 @@ def n_parse(state: EmailState) -> EmailState:
     return state
 
 def n_profile(state: EmailState) -> EmailState:
-    state["profile"] = load_profile("default")
+    tone = state["parsed"]["tone"]
+    profile_key = tone if tone in {"formal", "casual", "assertive"} else "formal"
+    state["profile"] = load_profile(profile_key)
     return state
 
 def n_intent(state: EmailState) -> EmailState:
@@ -71,7 +80,11 @@ def n_draft(state: EmailState) -> EmailState:
     return state
 
 def n_personalize(state: EmailState) -> EmailState:
-    state["personalized"] = personalize(state["draft"], state["profile"])
+    state["personalized"] = personalize(
+    state["draft"],
+    state["profile"],
+    state["parsed"]["sender_name"]
+    )
     return state
 
 def n_review(state: EmailState) -> EmailState:
@@ -80,7 +93,10 @@ def n_review(state: EmailState) -> EmailState:
 
 def n_finalize(state: EmailState) -> EmailState:
     state["final"] = state["reviewed"]
-    save_draft("default", state["final"])
+    # save to the same profile we loaded (based on tone)
+    tone = state["parsed"]["tone"]
+    profile_key = tone if tone in {"formal", "casual", "assertive"} else "formal"
+    save_draft(profile_key, state["final"])
     return state
 
 def route_after_review(state: EmailState) -> str:

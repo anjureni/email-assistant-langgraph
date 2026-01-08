@@ -9,6 +9,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Input")
     tone = st.selectbox("Tone", ["formal", "casual", "assertive"])
+    sender_name = st.text_input("Your name (sender)")
     recipient_name = st.text_input("Recruiter / Recipient Name (optional)")
     company_name = st.text_input("Company Name (optional)")
     prompt = st.text_area("What do you want to write?", height=180)
@@ -27,6 +28,7 @@ with col2:
             raw = {
                 "prompt": prompt,
                 "tone": tone,
+                "sender_name": sender_name,
                 "recipient_name": recipient_name,
                 "company_name": company_name,
                 "extra_context": extra_context,

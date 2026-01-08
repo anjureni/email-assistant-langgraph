@@ -4,6 +4,7 @@ from typing import Optional
 class ParsedInput(BaseModel):
     prompt: str = Field(..., min_length=5)
     tone: str = "formal"
+    sender_name: str
     recipient_name: Optional[str] = None
     company_name: Optional[str] = None
     extra_context: Optional[str] = None
@@ -16,6 +17,7 @@ def run_input_parser(raw: dict) -> ParsedInput:
     return ParsedInput(
         prompt=(raw.get("prompt") or "").strip(),
         tone=tone,
+        sender_name=(raw.get("sender_name") or "Your Name"),
         recipient_name=(raw.get("recipient_name") or None),
         company_name=(raw.get("company_name") or None),
         extra_context=(raw.get("extra_context") or None),
