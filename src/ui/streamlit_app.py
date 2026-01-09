@@ -1,8 +1,11 @@
 import streamlit as st
-from src.workflow.langgraph_flow import generate_email_with_agents
+import urllib.parse
 
-st.set_page_config(page_title="AI Email Assistant", layout="wide")
-st.title("📧 AI Email Assistant ")
+from src.workflow.langgraph_flow import generate_email_with_agents
+from src.utils.pdf_export import build_email_pdf
+
+st.set_page_config(page_title="AI-Powered Email Assistant", layout="wide")
+st.title("📧 AI-Powered Email Assistant ")
 
 col1, col2 = st.columns(2)
 
@@ -19,6 +22,7 @@ with col1:
 
 with col2:
     st.subheader("Output")
+
     if "draft" not in st.session_state:
         st.session_state["draft"] = ""
 
@@ -34,9 +38,46 @@ with col2:
                 "company_name": company_name,
                 "extra_context": extra_context,
                 "length": length,
-              
             }
             with st.spinner("Running agents (Intent → Tone → Draft → Review)…"):
                 st.session_state["draft"] = generate_email_with_agents(raw)
 
-    st.text_area("Editable Email", value=st.session_state["draft"], height=520)
+    # ---- Subject & Body split ----
+    draft_text = st.session_state["draft"]
+
+    subject = ""
+    body = ""
+
+    if draft_text and "Subject:" in draft_text:
+        lines = draft_text.split("\n", 1)
+        subject = lines[0].replace("Subject:", "").strip()
+        body = lines[1].strip() if len(lines) > 1 else ""
+    else:
+        body = draft_text
+
+    subject = st.text_input("Subject", value=subject)
+    body = st.text_area("Body", value=body, height=420)
+
+    # Store back to session state
+    st.session_state["subject"] = subject
+    st.session_state["body"] = body
+
+    # ---- Export Options ----
+    if st.session_state.get("body"):
+        subject_encoded = urllib.parse.quote(st.session_state.get("subject", ""))
+        body_encoded = urllib.parse.quote(st.session_state.get("body", ""))
+
+        mailto_link = f"mailto:?subject={subject_encoded}&body={body_encoded}"
+        st.markdown(f"📨 **Open Email Draft in Your Mail App:** [Click here to compose email]({mailto_link})")
+
+        pdf_bytes = build_email_pdf(
+            st.session_state.get("subject", ""),
+            st.session_state.get("body", "")
+        )
+
+        st.download_button(
+            label="⬇️ Download as PDF",
+            data=pdf_bytes,
+            file_name="email_draft.pdf",
+            mime="application/pdf"
+        )
