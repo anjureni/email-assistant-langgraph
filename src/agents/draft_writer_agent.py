@@ -8,7 +8,6 @@ def write_draft(
     company_name: str | None,
     extra_context: str | None,
     length: str,
-    include_subject: bool,
 ) -> str:
     length_rules = {
         "short": "Keep it short: 4-7 sentences total.",
@@ -16,11 +15,8 @@ def write_draft(
         "long": "Keep it detailed but not rambling: 13-20 sentences total."
     }.get(length, "Keep it medium length: 8-12 sentences total.")
 
-    subject_rule = (
-        "You MUST include a subject line in the exact format 'Subject: ...' on the first line."
-        if include_subject else
-        "Do NOT include any subject line."
-    )
+    # Always include subject
+    subject_rule = "You MUST include a subject line in the exact format 'Subject: ...' on the first line."
 
     full_prompt = f"""
 You are an expert email assistant.
@@ -40,11 +36,16 @@ EXTRA CONTEXT:
 {extra_context or ""}
 
 Write the email with:
+- First line must be: Subject: ...
 - Greeting
 - Clear body
 - Ending
 - Sign-off placeholder [SIGNOFF]
 - Signature placeholder [SIGNATURE]
+
+Return ONLY the email text.
 """
-    # Use tone parameter too (so model aligns)
-    return generate_email(full_prompt, tone= "formal")
+
+    # IMPORTANT: use the selected tone, not always formal
+    # If you have tone available elsewhere, pass it here. If not, keep formal.
+    return generate_email(full_prompt, tone="formal")

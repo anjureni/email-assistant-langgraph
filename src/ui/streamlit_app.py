@@ -2,7 +2,7 @@ import streamlit as st
 from src.workflow.langgraph_flow import generate_email_with_agents
 
 st.set_page_config(page_title="AI Email Assistant", layout="wide")
-st.title("📧 AI Email Assistant (LangGraph Agents)")
+st.title("📧 AI Email Assistant ")
 
 col1, col2 = st.columns(2)
 

@@ -21,7 +21,6 @@ def run_input_parser(raw: dict) -> ParsedInput:
         length = "medium"
 
    
-    include_subject = True if include_subject in [True, "true", "True", 1, "1", "yes", "Yes"] else False
 
     return ParsedInput(
         prompt=(raw.get("prompt") or "").strip(),
@@ -31,5 +30,5 @@ def run_input_parser(raw: dict) -> ParsedInput:
         company_name=(raw.get("company_name") or None),
         extra_context=(raw.get("extra_context") or None),
         length=length,
-        include_subject=include_subject,
+      
     )
