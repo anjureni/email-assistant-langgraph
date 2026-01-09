@@ -9,6 +9,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Input")
     tone = st.selectbox("Tone", ["formal", "casual", "assertive"])
+    length = st.selectbox("Message length", ["short", "medium", "long"], index=1)
     sender_name = st.text_input("Your name (sender)")
     recipient_name = st.text_input("Recruiter / Recipient Name (optional)")
     company_name = st.text_input("Company Name (optional)")
@@ -32,6 +33,8 @@ with col2:
                 "recipient_name": recipient_name,
                 "company_name": company_name,
                 "extra_context": extra_context,
+                "length": length,
+              
             }
             with st.spinner("Running agents (Intent → Tone → Draft → Review)…"):
                 st.session_state["draft"] = generate_email_with_agents(raw)

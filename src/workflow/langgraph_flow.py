@@ -76,8 +76,11 @@ def n_draft(state: EmailState) -> EmailState:
         recipient_name=p.get("recipient_name"),
         company_name=p.get("company_name"),
         extra_context=p.get("extra_context"),
+        length=p.get("length", "medium"),
+    
     )
     return state
+
 
 def n_personalize(state: EmailState) -> EmailState:
     state["personalized"] = personalize(

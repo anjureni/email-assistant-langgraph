@@ -8,11 +8,20 @@ class ParsedInput(BaseModel):
     recipient_name: Optional[str] = None
     company_name: Optional[str] = None
     extra_context: Optional[str] = None
+    length: str = "medium"
+    
 
 def run_input_parser(raw: dict) -> ParsedInput:
     tone = (raw.get("tone") or "formal").lower().strip()
     if tone not in {"formal", "casual", "assertive"}:
         tone = "formal"
+
+    length = (raw.get("length") or "medium").lower().strip()
+    if length not in {"short", "medium", "long"}:
+        length = "medium"
+
+   
+    include_subject = True if include_subject in [True, "true", "True", 1, "1", "yes", "Yes"] else False
 
     return ParsedInput(
         prompt=(raw.get("prompt") or "").strip(),
@@ -21,4 +30,6 @@ def run_input_parser(raw: dict) -> ParsedInput:
         recipient_name=(raw.get("recipient_name") or None),
         company_name=(raw.get("company_name") or None),
         extra_context=(raw.get("extra_context") or None),
+        length=length,
+        include_subject=include_subject,
     )
