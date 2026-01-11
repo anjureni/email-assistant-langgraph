@@ -14,7 +14,7 @@ with col1:
     tone = st.selectbox("Tone", ["formal", "casual", "assertive"])
     length = st.selectbox("Message length", ["short", "medium", "long"], index=1)
     sender_name = st.text_input("Your name (sender)")
-    recipient_name = st.text_input("Recruiter / Recipient Name (optional)")
+    recipient_name = st.text_input("Recipient Name (optional)")
     company_name = st.text_input("Company Name (optional)")
     prompt = st.text_area("What do you want to write?", height=180)
     extra_context = st.text_area("Extra context (optional)", height=120)
