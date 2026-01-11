@@ -24,6 +24,7 @@ You are an expert email assistant.
 INTENT: {intent}
 {tone_rules}
 LENGTH RULE: {length_rules}
+`   
 SUBJECT RULE: {subject_rule}
 
 RECIPIENT_NAME: {recipient_name or "Recipient"}
