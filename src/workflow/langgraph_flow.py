@@ -71,15 +71,16 @@ def n_draft(state: EmailState) -> EmailState:
     p = state["parsed"]
     state["draft"] = write_draft(
         intent=state["intent"],
+        tone=p["tone"],                 # ✅ NEW
         tone_rules=state["tone_rules"],
         prompt=p["prompt"],
         recipient_name=p.get("recipient_name"),
         company_name=p.get("company_name"),
         extra_context=p.get("extra_context"),
         length=p.get("length", "medium"),
-    
     )
     return state
+
 
 
 def n_personalize(state: EmailState) -> EmailState:

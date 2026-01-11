@@ -2,6 +2,7 @@ from src.integrations.openai_client import generate_email
 
 def write_draft(
     intent: str,
+    tone: str,                 # ✅ NEW
     tone_rules: str,
     prompt: str,
     recipient_name: str | None,
@@ -10,12 +11,11 @@ def write_draft(
     length: str,
 ) -> str:
     length_rules = {
-        "short": "Keep it short: 4-7 sentences total.",
-        "medium": "Keep it medium length: 8-12 sentences total.",
-        "long": "Keep it detailed but not rambling: 13-20 sentences total."
-    }.get(length, "Keep it medium length: 8-12 sentences total.")
+        "short": "Keep it short: 4-6 sentences total.",
+        "medium": "Keep it medium length: 6-8 sentences total.",
+        "long": "Keep it detailed but not rambling: 10-14 sentences total."
+    }.get(length, "Keep it medium length: 6-8 sentences total.")
 
-    # Always include subject
     subject_rule = "You MUST include a subject line in the exact format 'Subject: ...' on the first line."
 
     full_prompt = f"""
@@ -45,7 +45,4 @@ Write the email with:
 
 Return ONLY the email text.
 """
-
-    # IMPORTANT: use the selected tone, not always formal
-    # If you have tone available elsewhere, pass it here. If not, keep formal.
-    return generate_email(full_prompt, tone="formal")
+    return generate_email(full_prompt, tone=tone)   # ✅ pass label
