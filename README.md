@@ -1,4 +1,4 @@
-# AI-Powered Email Assistant (LangGraph + Streamlit)
+# AI-Powered Email Assistant (LangGraph + Streamlit) By Anju Susan Raju
 
 ## Overview
 This project is an AI-powered Email Assistant built using **LangGraph** and **Streamlit**.  
