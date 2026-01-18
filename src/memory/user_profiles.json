@@ -3,11 +3,125 @@
     "preferred_signoff": "Best regards",
     "signature_format": "{sender_name}",
     "last_drafts": [
-      "Subject: Application for Data Engineer Position\n\nDear Reni,\n\nI hope this message finds you well. I am writing to express my interest in the Data Engineer position at Mircroland. I have attached my CV for your review, which outlines my relevant experience and skills in data engineering.\n\nWith a strong background in data analysis, database management, and ETL processes, I am confident in my ability to contribute effectively to your team. I am particularly drawn to Mircroland due to its commitment to innovation and excellence in technology solutions.\n\nThank you for considering my application. I look forward to the opportunity to discuss how my background and skills align with the needs of your team.\n\nBest regards,  \nAnju Reni",
-      "Subject: Application for Data Engineer Position\n\nDear Reni,\n\nI hope this message finds you well. I am writing to express my interest in the Data Engineer position at Mircroland and have attached my CV for your review. I believe my skills and experience align well with the requirements of the role, and I am eager to contribute to your esteemed company.\n\nThank you for considering my application. I look forward to the opportunity to discuss my candidacy further.\n\nBest regards,  \nAnju Reni",
-      "Subject: Submission of My CV\n\nDear Reni,\n\nI hope this message finds you well. I am writing to formally submit my CV for your consideration. I believe that my skills and experiences align well with the opportunities at Company, and I am eager to explore potential collaborations.\n\nPlease find my CV attached for your review. I appreciate your time and attention and look forward to any feedback you may have.\n\nThank you for your consideration.\n\nBest regards,  \nAnju",
-      "Subject: Submission of My CV  \n\nDear Recipient,  \n\nI hope this message finds you well. I am writing to formally submit my CV for your consideration, as I am very interested in potential opportunities at Company. Please find the document attached for your review.  \n\nShould you require any further information or clarification, please do not hesitate to reach out. I appreciate your time and consideration.  \n\nThank you for your attention to my application.  \n\nBest regards,  \nAnju",
-      "Subject: CV Submission\n\nDear Reni,\n\nI hope this message finds you well. I am writing to submit my CV for your review, as discussed. I believe my qualifications and experience align well with the opportunities at the Company, and I am eager to contribute to your esteemed team.\n\nPlease find my CV attached for your consideration. Should you require any further information or clarification, please feel free to reach out at your convenience.\n\nThank you for your time and consideration.\n\nBest regards,  \nAnju"
+      "Subject: Request to Attach CV\n\nDear Recipient,\n\nI hope this message finds you well. I am writing to formally submit my curriculum vitae for your review. Please find the attached document, which outlines my professional experience and qualifications.\n\nShould you require any further information or clarification, please do not hesitate to reach out. I appreciate your consideration and look forward to the opportunity to discuss my application further.\n\nThank you for your time.\n\nBest regards,  \nYour Name",
+      "Subject: Request for CV Attachment\n\nDear Reni,\n\nI hope this message finds you well. As per your request, I have attached my CV for your review. Please let me know if you require any additional information or documents to facilitate the process. I appreciate your attention to this matter and look forward to your feedback.\n\nThank you for your consideration.\n\nBest regards,  \nAnju",
+      "Subject: Request to Attach CV and Provide Location Details\n\nDear Reni,\n\nI hope this message finds you well. I am writing to kindly request that you attach my CV to our ongoing correspondence. Additionally, I would appreciate it if you could include the location details relevant to the position we discussed.\n\nThank you for your assistance with this matter. I look forward to your prompt response.\n\nBest regards,  \nAnju",
+      "Subject: Request to Attach CV\n\nDear Reni,\n\nI hope this message finds you well. I am writing to formally request the attachment of my CV for your review. Additionally, I would like to provide my contact details for your convenience: +91-3456970970.\n\nPlease note that I am currently located in [Your Location], and I am eager to discuss any potential opportunities at the Company.\n\nThank you for your attention to this matter. I look forward to your response.\n\nBest regards,  \nAnju",
+      "Subject: Request for CV Submission and Job Details\n\nDear Reni,\n\nI hope this message finds you well. I am writing to formally submit my CV for your consideration. Please find it attached to this email. Additionally, I would like to provide my contact details for any further correspondence: 3456970970.\n\nCould you please share the job description details at your earliest convenience? I appreciate your assistance and look forward to your response.\n\nThank you for your attention to this matter.\n\nBest regards,  \nAnju"
+    ],
+    "prompt_history": [
+      "Attach my Cv\n\nAttach my CvAdd the location details",
+      "Attach my Cv\n\nAttach my CvAdd the location details\n\nneed more details about JD",
+      "Attach my Cv\n\nAttach my CvAdd the location details\n\nneed more details about JD \n\nmy cointact details-5685695096",
+      "attach cv",
+      "attach cv\n\ngiv me more about the location",
+      "Atatch cv",
+      "attach my cv",
+      "attach my cv\n\nadd the location details",
+      "attach my cv\n\nadd the location details\n\nmy ciontact details here:-3456970970",
+      "attach my cv\n\nadd the location details\n\nmy ciontact details here:-3456970970\n\nplease provide JD details"
+    ],
+    "conversation_history": [
+      {
+        "ts": "2026-01-18T19:43:47.399083Z",
+        "prompt": "Attach my Cv\n\nAttach my CvAdd the location details",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request for CV Submission and Location Details\n\nDear Anju,\n\nI hope this message finds you well. I am writing to submit my CV as requested and to provide the necessary location details. Please find my CV attached for your review.\n\nAdditionally, I am located in [Your Location], and I am available for any further discussions or interviews at your convenience. Should you need any more information or clarification, please do not hesitate to reach out.\n\nThank you for considering my application. I look forward to your response.\n\nBest regards,  \nReni",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T19:44:17.422350Z",
+        "prompt": "Attach my Cv\n\nAttach my CvAdd the location details\n\nneed more details about JD",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request for Additional Information and CV Attachment\n\nDear Anju,\n\nI hope this message finds you well. I am writing to attach my CV for your review, as requested. Additionally, I would appreciate it if you could provide further details regarding the job description, including the specific location related to the position.\n\nThis information will assist me in understanding the role better and preparing for any potential discussions. Thank you for your attention to this matter.\n\nI look forward to your response.\n\nBest regards,  \nReni",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T19:44:45.527535Z",
+        "prompt": "Attach my Cv\n\nAttach my CvAdd the location details\n\nneed more details about JD \n\nmy cointact details-5685695096",
+        "tone": "formal",
+        "intent": "other",
+        "final": "Subject: Request for Additional Information and CV Submission\n\nDear Anju,\n\nI hope this message finds you well. I am writing to attach my CV for your review and to request further details regarding the job description. Additionally, I would appreciate it if you could provide the location details pertinent to the position.\n\nFor your reference, my contact number is 568-569-5096. Please feel free to reach out if you need any more information or clarification.\n\nThank you for your attention to this matter. I look forward to your response.\n\nBest regards,  \nReni",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T19:48:59.207560Z",
+        "prompt": "attach cv",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request to Attach CV\n\nDear Recipient,\n\nI hope this message finds you well. I am writing to formally request the attachment of my CV for your review. I believe my qualifications and experiences align well with the opportunities available at Company, and I am eager to contribute to your esteemed organization.\n\nPlease find my CV attached for your consideration. Should you require any further information or clarification, please do not hesitate to reach out.\n\nThank you for your attention to this matter.\n\nBest regards,  \nYour Name",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T19:49:40.001807Z",
+        "prompt": "attach cv\n\ngiv me more about the location",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request for Additional Information and CV Attachment\n\nDear Recipient,\n\nI hope this message finds you well. I am writing to provide my CV as requested and to inquire further about the location associated with the opportunity at Company. Understanding the specifics of the area, including amenities and community resources, would greatly assist me in evaluating the position.\n\nI have attached my CV for your review. Please let me know if you require any additional information or if there are specific aspects of the location you would like me to focus on.\n\nThank you for your attention to this matter. I look forward to your response.\n\nBest regards,  \nYour Name",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T19:52:57.313796Z",
+        "prompt": "Atatch cv",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request to Attach CV\n\nDear Recipient,\n\nI hope this message finds you well. I am writing to formally submit my curriculum vitae for your review. Please find the attached document, which outlines my professional experience and qualifications.\n\nShould you require any further information or clarification, please do not hesitate to reach out. I appreciate your consideration and look forward to the opportunity to discuss my application further.\n\nThank you for your time.\n\nBest regards,  \nYour Name",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T20:04:01.910162Z",
+        "prompt": "attach my cv",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request for CV Attachment\n\nDear Reni,\n\nI hope this message finds you well. As per your request, I have attached my CV for your review. Please let me know if you require any additional information or documents to facilitate the process. I appreciate your attention to this matter and look forward to your feedback.\n\nThank you for your consideration.\n\nBest regards,  \nAnju",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T20:04:20.170079Z",
+        "prompt": "attach my cv\n\nadd the location details",
+        "tone": "formal",
+        "intent": "information",
+        "final": "Subject: Request to Attach CV and Provide Location Details\n\nDear Reni,\n\nI hope this message finds you well. I am writing to kindly request that you attach my CV to our ongoing correspondence. Additionally, I would appreciate it if you could include the location details relevant to the position we discussed.\n\nThank you for your assistance with this matter. I look forward to your prompt response.\n\nBest regards,  \nAnju",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T20:04:48.341271Z",
+        "prompt": "attach my cv\n\nadd the location details\n\nmy ciontact details here:-3456970970",
+        "tone": "formal",
+        "intent": "other",
+        "final": "Subject: Request to Attach CV\n\nDear Reni,\n\nI hope this message finds you well. I am writing to formally request the attachment of my CV for your review. Additionally, I would like to provide my contact details for your convenience: +91-3456970970.\n\nPlease note that I am currently located in [Your Location], and I am eager to discuss any potential opportunities at the Company.\n\nThank you for your attention to this matter. I look forward to your response.\n\nBest regards,  \nAnju",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      },
+      {
+        "ts": "2026-01-18T20:06:36.068644Z",
+        "prompt": "attach my cv\n\nadd the location details\n\nmy ciontact details here:-3456970970\n\nplease provide JD details",
+        "tone": "formal",
+        "intent": "other",
+        "final": "Subject: Request for CV Submission and Job Details\n\nDear Reni,\n\nI hope this message finds you well. I am writing to formally submit my CV for your consideration. Please find it attached to this email. Additionally, I would like to provide my contact details for any further correspondence: 3456970970.\n\nCould you please share the job description details at your earliest convenience? I appreciate your assistance and look forward to your response.\n\nThank you for your attention to this matter.\n\nBest regards,  \nAnju",
+        "retries": 0,
+        "blocked": false,
+        "guardrails_reason": ""
+      }
     ]
   },
   "assertive": {

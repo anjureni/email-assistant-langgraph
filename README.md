@@ -12,6 +12,12 @@ It uses a **multi-agent architecture** to generate emails with configurable **to
 - Re-draft option (regenerate a fresh email)
 - Export: open in email client + download PDF
 - Public-safe: sender name is entered by user (not hardcoded)
+
+## Guardrails (Input Validation)
+- The app uses a guardrails function to block empty, offensive, or forbidden content in the prompt.
+- Forbidden keywords include: `hack`, `scam`, `phish`, `offensive`, `hate`, `illegal`.
+- If the prompt is empty or contains any forbidden word, email generation is blocked and an error is shown.
+- This helps ensure safe and appropriate use of the assistant.
 ## High-Level Architecture
 User → Streamlit UI → LangGraph Orchestrator → Agents → Final Email Output
 
