@@ -92,8 +92,9 @@ Output (Subject/Body, Export)
    export MODEL_NAME=gpt-4o-mini
    ```
 3. Run the Streamlit app:
-   ```bash
-   PYTHONPATH=. streamlit run src/ui/streamlit_app.py
+Run the streamlit 
+source .venv/bin/activate
+PYTHONPATH=. streamlit run src/ui/streamlit_app.py
    # or open http://localhost:8501/
    ```
 
