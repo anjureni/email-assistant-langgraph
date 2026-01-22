@@ -15,11 +15,15 @@ It uses a **multi-agent architecture** to generate emails with configurable **to
 
 ## Guardrails (Input Validation)
 - The app uses a guardrails function to block empty, offensive, or forbidden content in the prompt.
-- Forbidden keywords include: `hack`, `scam`, `phish`, `offensive`, `hate`, `illegal`.
+- Forbidden keywords include:  "password","ssn","social security", "credit card",
+    "bank account","wire transfer","phishing", "hack"
+
 - If the prompt is empty or contains any forbidden word, email generation is blocked and an error is shown.
 - This helps ensure safe and appropriate use of the assistant.
 ## High-Level Architecture
 User → Streamlit UI → LangGraph Orchestrator → Agents → Final Email Output
+<img width="582" height="387" alt="image" src="https://github.com/user-attachments/assets/ef08ab98-9b19-4991-a1d0-a7c58d711905" />
+
 
 Agents:
 1. Input Parser (validates and structures user input)
@@ -47,15 +51,3 @@ MODEL_NAME=gpt-4o-mini
 PYTHONPATH=. streamlit run src/ui/streamlit_app.py
 or open:-
 http://localhost:8501/
-
-
-Demo Steps
-Enter Sender Name
-Choose Tone and Length
-Enter Prompt
-Click Generate
-Show Subject + Body fields
-Click “Re-run Review only” and show improved grammar
-Click “Re-draft” to generate a new version
-Export to PDF / Open in email client
-
