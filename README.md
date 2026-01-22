@@ -24,6 +24,13 @@ It uses a **multi-agent architecture** to generate emails with configurable **to
 User → Streamlit UI → LangGraph Orchestrator → Agents → Final Email Output
 <img width="582" height="387" alt="image" src="https://github.com/user-attachments/assets/ef08ab98-9b19-4991-a1d0-a7c58d711905" />
 
+# Agentic Orchestration Overview
+
+<img width="657" height="292" alt="image" src="https://github.com/user-attachments/assets/e0ad216c-581e-4f3f-a771-0602ebb70de1" />
+
+## Work FLOW Diagaram
+<img width="547" height="88" alt="image" src="https://github.com/user-attachments/assets/5a87b572-93bd-4182-aba9-7aceae4e465c" />
+
 
 Agents:
 1. Input Parser (validates and structures user input)
